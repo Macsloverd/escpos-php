@@ -529,6 +529,11 @@ class Printer
             $this -> connector -> write(self::ESC . "d" . chr($lines));
         }
     }
+    
+    public function beep()
+    {
+        $this -> connector -> write(self::ESC . "B" . chr(4) . chr(1));
+    }
 
     /**
      * Some printers require a form feed to release the paper. On most printers, this
